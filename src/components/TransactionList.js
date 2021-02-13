@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Transaction from './Transaction';
+import { GlobalContext } from '../context/GlobalState';
 
-function TransactionList() {
+const TransactionList = () => {
+    const {transactions} = useContext(GlobalContext);
+
     return (
         <div>
             <h3> History </h3>
             <ul className="list">
-{/* Test Transaction */}
-                <li className="minus">
-                    CASH <span> -$400 </span>
-                    <button className="delete-btn"> x </button>
-                </li>
-{/* End Test Transaction */}
+                {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))}
             </ul>
         </div>
     );

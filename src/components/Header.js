@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Header() {
+const Header = () => {
     return (
-        <h2>
-            Expense Tracker
-        </h2>
+        <h3>
+            # Test Template 1
+        </h3>
     );
 }
 
